@@ -1,17 +1,14 @@
 let connection = require('./connections');
 
 module.exports = {
-    selectAll: function(table,calBack){
+    selectAll: function(table,callBack){
         connection.query(`SELECT * FROM ??`, [table],function (err, data){
             if (err) throw err;
             callBack(data);
         })
     },
 
-    insertOne: function(table, col, value, callBack){
-        console.log(table)
-        console.log(col)
-        console.log(value)
+    insertOne: function(table, col, value, callBack){''
         connection.query("INSERT INTO ?? (??) VALUE (?)", [table, col, value], function(err, data){
             if (err) throw err;
             callBack(data);

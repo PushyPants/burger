@@ -1,0 +1,41 @@
+<div class="jumbotron text-center">
+    <h1>
+        Req.Burger!
+    </h1>
+</div>
+<div class="container">
+    <div class="row burger-view">
+        <div class="col-md-6 before text-center mx-auto">
+            <h3>burgers before eaten</h3>
+            <div class="burger-display mx-auto">
+                <ul class="text-left">
+                    {{#each burger}} 
+                        {{#unless devoured}}
+                        <li data-id=`${id}`>{{burger_name}}</li>
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 devoured text-center mx-auto">
+            <h3>Devoured Burgers</h3>
+            <div class="burger-display mx-auto">
+                <ul class="text-left">
+                    {{#each burger}} 
+                        {{#if devoured}}
+                        <li data-id=`${id}`>{{burger_name}}</li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row burger-form mx-auto text-center">
+        <div class="col-md-12 text-center mx-auto">
+            <h3>Create New Burger</h3>
+            <div class="burger-form mx-auto">
+
+            </div>
+        </div>
+    </div>
+</div>
