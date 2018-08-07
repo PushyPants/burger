@@ -20,20 +20,10 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-//var routes = require("./controllers/catsController.js");
+Import routes and give the server access to them.
+var routes = require("./controllers/catsController.js");
 
-//app.use(routes);
-
-let orm = require('./config/orm');
-
-
-
-orm.insertOne('burgers', 'burger_name', 'Newest Burger', 'burger_name', function(data){
-    console.log(data);
-})
-
-
+app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
