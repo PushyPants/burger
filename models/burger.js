@@ -13,11 +13,13 @@ let burgers = {
         })
     },
 
-    devour: function(burger_name, callBack){
-        orm.updateOne('burgers', 'devoured', '1', 'burger_name' , burger_name, function(data){
+    devour: function(burger_id, callBack){
+        orm.updateOne('burgers', 'devoured', '1', 'id' , burger_id, function(data){
             callBack(data);
         })
-    },
-}
+    }
+
+    // create delete function if time
+};
 
 module.exports = burgers

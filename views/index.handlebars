@@ -11,7 +11,10 @@
                 <ul class="text-left">
                     {{#each burger}} 
                         {{#unless devoured}}
-                        <li data-id=`${id}`>{{burger_name}}</li>
+                            <li data-id="{{id}}">
+                                {{burger_name}}
+                                <button class="eat" data-id="{{id}}">Req Dat Burger!</button>
+                            </li>
                         {{/unless}}
                     {{/each}}
                 </ul>
@@ -23,7 +26,10 @@
                 <ul class="text-left">
                     {{#each burger}} 
                         {{#if devoured}}
-                        <li data-id=`${id}`>{{burger_name}}</li>
+                        <li data-id="{{id}}">
+                            {{burger_name}}
+                            {{!-- <button class="delete" data-id="{{id}}">Delete</button> --}}
+                        </li>
                         {{/if}}
                     {{/each}}
                 </ul>
@@ -34,7 +40,12 @@
         <div class="col-md-12 text-center mx-auto">
             <h3>Create New Burger</h3>
             <div class="burger-form mx-auto">
-
+                <div class="input">
+                    <input type="text mx-auto" id="burger-input">
+                </div>
+                <div class="submit-form">
+                    <button class="submit">Add Dat Burger</button>
+                </div>
             </div>
         </div>
     </div>
